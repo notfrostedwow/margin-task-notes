@@ -1,0 +1,34 @@
+{
+  "name": "margin-local-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "EdgeFlowAI <edgeflowai@proton.me>",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4183 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check src tests scripts *.json *.ts *.js *.html README.md docs/*.md .github/workflows/*.yml",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run --maxWorkers=1",
+    "build": "tsc --noEmit && vite build && node scripts/offline.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4183 --strictPort",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.19.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.62.0",
+    "vite": "7.3.7",
+    "vitest": "4.1.12"
+  }
+}
